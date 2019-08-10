@@ -19,3 +19,10 @@ class GPS_Device(object):
         #parse data string if available (implemented by children)
         #let the logger know
         logger.GPS_update()
+
+    def get_logger(self):
+        return self.logger
+
+#example
+class AdafruitUltimateGPS(GPS_Device):
+    def __init__(self):

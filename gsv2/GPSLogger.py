@@ -3,9 +3,10 @@ import simplekml
 
 class GPS_Logger(object):
 
-    def __init__(self, device, flight_name, outfile=None):
-        self.device = device
+    def __init__(self, flight_name, outfile=None, color='99ffac59', icon='http://earth.google.com/images/kml-icons/track-directional/track-0.png'):
         self.flight_name = flight_name
+        self.color = color
+        self.icon = icon
         if outfile is None:
             self.log_file = sys.stdout
         else:
@@ -29,15 +30,15 @@ class GPS_Logger(object):
         ret = kml_document.newgxtrack(name=flight_name)
 
         ret.newwhen(self.times)
-        self.newgxcoord(self.coordinates)
+        ret.newgxcoord(self.coordinates)
 
-        trk.stylemap.normalstyle.iconstyle.icon.href = 'http://earth.google.com/images/kml-icons/track-directional/track-0.png'
-        trk.stylemap.normalstyle.linestyle.color = '99ffac59'
-        trk.stylemap.normalstyle.linestyle.width = 6
-        trk.stylemap.highlightstyle.iconstyle.icon.href = 'http://earth.google.com/images/kml-icons/track-directional/track-0.png'
-        trk.stylemap.highlightstyle.iconstyle.scale = 1.2
-        trk.stylemap.highlightstyle.linestyle.color = '99ffac59'
-        trk.stylemap.highlightstyle.linestyle.width = 8
+        ret.stylemap.normalstyle.iconstyle.icon.href = self.icon
+        ret.stylemap.normalstyle.linestyle.color = self.color
+        ret.stylemap.normalstyle.linestyle.width = 6
+        ret.stylemap.highlightstyle.iconstyle.icon.href = self.icon
+        ret.stylemap.highlightstyle.iconstyle.scale = 1.2
+        ret.stylemap.highlightstyle.linestyle.color = self.color
+        ret.stylemap.highlightstyle.linestyle.width = 8
 
         return ret
 

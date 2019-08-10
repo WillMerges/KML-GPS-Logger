@@ -1,6 +1,8 @@
 # This is a recreation of the example found in the KML Reference:
 # http://code.google.com/apis/kml/documentation/kmlreference.html#gxtrack
-
+"""
+sample pulled from online
+"""
 import os
 from simplekml import Kml, Snippet, Types
 
