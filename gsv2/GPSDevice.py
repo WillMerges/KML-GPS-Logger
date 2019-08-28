@@ -1,4 +1,5 @@
 """
+file: GPSDevice.py
 Implement later
 @author: Will Merges
 """
@@ -18,7 +19,8 @@ class GPS_Device(object):
     def refresh(self):
         #parse data string if available (implemented by children)
         #let the logger know
-        logger.GPS_update()
+        if logger not None:
+            logger.GPS_update()
 
     def get_logger(self):
         return self.logger

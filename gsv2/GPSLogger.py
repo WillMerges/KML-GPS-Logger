@@ -1,3 +1,9 @@
+"""
+file: GPSLogger.py
+logs GPS data to google earth KML file
+@author: Will Merges
+"""
+
 import sys
 import simplekml
 
