@@ -3,18 +3,18 @@ file: GPSLogger.py
 logs GPS data to google earth KML file
 @author: Will Merges
 """
-
 import sys
 import simplekml
 
 class GPS_Logger(object):
 
-    def __init__(self, flight_name, outfile=None, color='99ffac59', icon='http://earth.google.com/images/kml-icons/track-directional/track-0.png'):
+    def __init__(self, flight_name, GPS_Device, outfile=None, color='99ffac59', icon='http://earth.google.com/images/kml-icons/track-directional/track-0.png'):
+        self.device = GPS_Device
         self.flight_name = flight_name
         self.color = color
         self.icon = icon
         if outfile is None:
-            self.log_file = sys.stdout
+            self.log_file = sys.stdoutflight_name
         else:
             try:
                 #append to end of previously existing log file if it exists
@@ -48,7 +48,12 @@ class GPS_Logger(object):
 
         return ret
 
+    def kill(self):
+        self.device.kill()
+
     def GPS_Update(self):
-        self.coordinates.append((device.lat, device.long, device.alt))
-        self.times.append(device.time)
-        self.num_pts = self.num_pts + 1
+        if device.update:
+            self.coordinates.append((device.lat, device.long, device.alt))
+            self.times.append(device.time)
+            self.num_pts = self.num_pts + 1
+            device.update = False
