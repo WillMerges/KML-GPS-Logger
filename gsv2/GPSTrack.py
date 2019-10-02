@@ -21,11 +21,10 @@ class GPSTrack(object):
         self.kml = simplekml.Kml(name=self.name+".kml", open=1)
         self.track = self.kml.newgxtrack(name = self.name)
 
-        #download links and replace at some point
-        self.track.stylemap.normalstyle.iconstyle.icon.href = 'http://earth.google.com/images/kml-icons/track-directional/track-0.png'
+        self.track.stylemap.normalstyle.iconstyle.icon.href = 'resources/track-0.png'
         self.track.stylemap.normalstyle.linestyle.color = '99ffac59'
         self.track.stylemap.normalstyle.linestyle.width = 6
-        self.track.stylemap.highlightstyle.iconstyle.icon.href = 'http://earth.google.com/images/kml-icons/track-directional/track-0.png'
+        self.track.stylemap.highlightstyle.iconstyle.icon.href = 'resources/track-0.png'
         self.track.stylemap.highlightstyle.iconstyle.scale = 1.2
         self.track.stylemap.highlightstyle.linestyle.color = '99ffac59'
         self.track.stylemap.highlightstyle.linestyle.width = 8
