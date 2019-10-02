@@ -6,7 +6,7 @@ Implement later
 import _thread
 import sys
 
-class GPS_Device(object):
+class GPSDevice(object):
 
     def __init__(self):
         self.lat = None
@@ -24,7 +24,7 @@ class GPS_Device(object):
 
     def run(self):
         while not self.exit:
-            self.refresh()
+            self.update_loop()
 
     def kill(self):
         self.exit = True
@@ -32,7 +32,10 @@ class GPS_Device(object):
     #should ovverride in implementations
     def refresh(self):
         #parse data string if available (implemented by children)
-        #let the logger know
+        pass
+
+    def update_loop(self):
+        self.refresh()
         self.update = True
 
 #example
@@ -41,4 +44,5 @@ class AdafruitUltimateGPS(GPS_Device):
         super().__init__()
 
     def refresh(self):
-        super().refresh()
+        #do stuff
+        pass
