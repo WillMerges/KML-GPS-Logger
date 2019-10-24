@@ -6,8 +6,8 @@
         <Document id="2">
             <name>GPS device</name>
             <LookAt>
-                <longitude>-122.205544</longitude>
-                <latitude>37.373386</latitude>
+                <longitude>32.992441</longitude>
+                <latitude>-106.979684</latitude>
                 <gx:TimeSpan id="4">
                     <begin>2010-05-28T02:02:09Z</begin>
                     <end>2010-05-28T02:02:56Z</end>
@@ -68,13 +68,9 @@
                         <when>2010-05-28T02:02:54Z</when>
                         <when>2010-05-28T02:02:55Z</when>
                         <when>2010-05-28T02:02:56Z</when>
-                        <gx:coord>-122.207881 37.371915 156.0</gx:coord>
-                        <gx:coord>-122.205712 37.373288 152.0</gx:coord>
-                        <gx:coord>-122.204678 37.373939 147.0</gx:coord>
-                        <gx:coord>-122.203572 37.37463 142.199997</gx:coord>
-                        <gx:coord>-122.203451 37.374706 141.800003</gx:coord>
-                        <gx:coord>-122.203329 37.37478 141.199997</gx:coord>
-                        <gx:coord>-122.203207 37.374857 140.199997</gx:coord>
+                        <gx:coord>1000 32.993113 -106.981028</gx:coord>
+                        <gx:coord>1200 32.992441 -106.979684</gx:coord>
+                        <gx:coord>1800 32.991415 -106.97742</gx:coord>
                         <ExtendedData>
                             <SchemaData schemaUrl="#6">
                                 <gx:SimpleArrayData name="heartrate">
